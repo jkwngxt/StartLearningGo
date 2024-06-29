@@ -58,4 +58,16 @@ func main() {
 	default: 
 		fmt.Println("> 21")
 	}
+
+	// Array
+	var names[5] string = [5] string{"Kawfang", "Kaw", "Fang", "Alax", "Bell"}
+	ageArray:=[5] int{10, 25, 26, 32}
+	var sth[5] int
+
+	fmt.Printf("Name: %s Age: %d\n", names[4], ageArray[4])
+	fmt.Println(sth)
+	fmt.Println("Size =", len(sth))
+
+	// Slices
+
 }

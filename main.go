@@ -178,19 +178,39 @@ func main() {
 		fmt.Println(index, value)
 	}
 
-	
+	fmt.Println("Check Animal:", checkAnimal(pets[:], amountPet, numPetCheck[:]))
+	fmt.Println("            :",numPetCheck)
+	fmt.Println("Sum of pets (real):", sumAnimal(numPetCheck[:]))
+	isAll, notComplete := isEqualAnm(pets[:], amountPet[:], numPetCheck[:])
+	fmt.Println("Complete:", isAll, "Missing:",notComplete)
+}
 
-
-
-
-
-
-
+// Function
+func checkAnimal(pets [] string,  amountPet [] int, numPetCheck [] int) string {
 	// Input
 	// fmt.Scanf(stringFormat, address)
+	for i := 0; i < len(pets); i++ {
+		fmt.Printf("%v (All : %v) : ", pets[i], amountPet[i])
+		fmt.Scanf("%d\n", &numPetCheck[i])
+	}
 
-	// var friend string
-	// fmt.Scanf("%s", &friend)
-	// fmt.Printf("friend = %s \n", friend)
+	return "Finished";
+}
 
+func sumAnimal(numPet [] int) (result int) {
+	for _, val := range numPet {
+		result += val
+	}
+	return
+}
+
+func isEqualAnm(pets [] string,  amountPet [] int, numPetCheck [] int) (result bool, notComplete [] string){
+	result = true
+	for idx, val := range pets {
+		if (numPetCheck[idx] != amountPet[idx]) {
+			result = false
+			notComplete = append(notComplete, val)
+		}
+	}
+	return
 }

@@ -4,7 +4,13 @@ package main
 // Import packages
 import "fmt" 
 
-// Functions
+// Struct
+type Node struct {
+	id int;
+	name string
+	value int;
+}
+
 func main() {
 	// Printing in Go is similar to Python, but you need to write the package
 	// Print is a function from fmt package
@@ -183,6 +189,53 @@ func main() {
 	fmt.Println("Sum of pets (real):", sumAnimal(numPetCheck[:]))
 	isAll, notComplete := isEqualAnm(pets[:], amountPet[:], numPetCheck[:])
 	fmt.Println("Complete:", isAll, "Missing:",notComplete)
+
+	// Struct continue
+	var node1 Node
+	node1.id = 1
+	node1.name = "Node_1"
+	node1.value = 28
+
+	fmt.Printf("No. %d Name: %s Value: %d\n", node1.id, node1.name, node1.value)
+
+	// Maps
+	course := map[string]float32 {"Math": 4, "English" : 3.5, "Thai" : 3.5, "Science" : 4}
+	fmt.Println(course)
+
+	var students = map[string] string {	"6510405377": "Jitlada", 
+										"6510405378": "Weeranut", 
+										"6510405379": "Pimmada", 
+										"6510405387": "Kronravee" }
+
+	fmt.Println(students)
+
+	var books = make(map[string] float32)
+	goods := make(map[string] float32)
+	var jeweries map[string] float32
+
+	fmt.Println(books == nil)
+	fmt.Println(jeweries == nil)
+
+	goods["Boook"] = 250
+	goods["Picture"] = 20
+	goods["Pen"] = 15
+
+	fmt.Println("Goods:", goods)
+	fmt.Println(goods["Picture"])
+
+	goods["Picture"] = 60
+	fmt.Println("Goods:", goods)
+
+	delete(goods, "Pen")
+	fmt.Println("Goods:", goods)
+
+	val1, exist1 := goods["Picture"]
+	val2, exist2 := goods["Flower"]
+
+	fmt.Println("Picture:",val1, exist1)
+	fmt.Println("Flower :",val2, exist2)
+
+	// if mapEx := goods; mapEx and goods are the same map (references)
 }
 
 // Function
